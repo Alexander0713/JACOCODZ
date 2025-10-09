@@ -4,6 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
@@ -12,7 +13,6 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: '11'
-        distribution: 'temurin'
-        cache: 'maven'
+        distribution: 'adopt'
     - name: Build with Maven
       run: mvn -B -e verify
